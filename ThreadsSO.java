@@ -2,14 +2,14 @@ import java.lang.Thread;
 
 public class ThreadsSO {
 	public static void main(String[] args) {
-		new Thread(T1).start();
+		new Thread(T1).start(); //para iniciar o thread, chama o run()
 		new Thread(T2).start();
 	}
 
+	//Em vez de herdar de Thread, Clock implementa a interface Runnable e implementa o método run
 	public static Runnable T1 = new Runnable() {
-
 		@Override
-		public void run() {
+		public void run() { //especifica o comportamento do thread
 			for (int x = 1; x < 101; x++) {
 				System.out.println("numero: " + x);
 				try {
